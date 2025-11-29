@@ -81,8 +81,8 @@ class _MyHomePageState extends State<MyHomePage> {
   ];
 
   // Original map dimensions (in pixels)
-  final double originalMapWidth = 1000; // Set your PNG width
-  final double originalMapHeight = 1500; // Set your PNG height
+  final double originalMapWidth = 666; // Set your PNG width
+  final double originalMapHeight = 725; // Set your PNG height
 
   @override
   Widget build(BuildContext context) {
@@ -128,14 +128,16 @@ class _MyHomePageState extends State<MyHomePage> {
                         showDialog(
                           context: context,
                           builder: (_) => AlertDialog(
-                            title: Text(marker['roomName']),
+                            backgroundColor: Cor.black,
+                            title: Text(marker['roomName'], style: TextStyle(fontFamily: "IBM", color: Cor.red),),
                             content: Text(
-                              'Room: ${marker['roomNumber']}\n${marker['description']}',
+                              'Room: ${marker['roomNumber']}\nDescription: ${marker['description']}',
+                              style: TextStyle(fontFamily: "IBM", color: Cor.white)
                             ),
                             actions: [
                               TextButton(
                                 onPressed: () => Navigator.pop(context),
-                                child: const Text('Close'),
+                                child: const Text('Close', style: TextStyle(fontFamily: "IBM", color: Cor.red)),
                               ),
                             ],
                           ),
@@ -144,7 +146,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: Container(
                         width: 30,
                         height: 30,
-                        color: Colors.transparent, // Invisible clickable area
+                        color: Colors.red, // Invisible clickable area
                       ),
                     ),
                   );
